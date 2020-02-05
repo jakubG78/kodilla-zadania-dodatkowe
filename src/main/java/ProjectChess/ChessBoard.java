@@ -13,16 +13,19 @@ public class ChessBoard {
         theBoard.get(row).theRow.set(col,figure);
     }
 
-    public void displayBoard() {
+    @Override
+    public String toString() {
+        String result = "";
         for(int y= 0; y<theBoard.size(); y++){
             for(int x=0; x<theBoard.get(y).theRow.size(); x++){
                 if(getFigure(y,x)!=null){
-                    System.out.print(" "+ getFigure(y,x).getColor() + getFigure(y,x).getValueOfFigure()+" ");
+                    result = result + " "+ getFigure(y,x).getColor() + getFigure(y,x).getValueOfFigure()+" ";
                 } else {
-                    System.out.print(" 00 ");
+                    result = result + " 00 ";
                 }
             }
-            System.out.println();
+            result = result +"\n";
         }
+        return result;
     }
 }

@@ -13,8 +13,8 @@ class Application
 
         thisBorad.setFigure(0,0,new BoardFigure("Q","w"));
         thisBorad.setFigure(7,7,new BoardFigure("P","b"));
-        BoardFigure result = thisBorad.getFigure(0,0);
-//        System.out.println(result.getValueOfFigure()+result.getColor());
-        thisBorad.displayBoard();
+        System.out.println(thisBorad.toString());
+        thisBorad.setFigure(3,3,new BoardFigure("Q","b"));
+        System.out.println(thisBorad.toString());
     }
 }

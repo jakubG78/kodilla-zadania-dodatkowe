@@ -11,11 +11,4 @@ class Figure{
         return color;
     }
 
-    public void setColor(String color) {
-        if(color.equals("b")||color.equals("w")){
-            this.color = color;
-        } else {
-            this.color = "0";
-        }
-    }
 }
