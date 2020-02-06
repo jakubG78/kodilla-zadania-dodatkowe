@@ -1,13 +1,13 @@
 package ProjectChess;
 
 class Figure{
-    public String color;
+    public FigureColor color;
 
-    public Figure(String color) {
+    public Figure(FigureColor color) {
         this.color = color;
     }
 
-    public String getColor() {
+    public FigureColor getColor() {
         return color;
     }
 

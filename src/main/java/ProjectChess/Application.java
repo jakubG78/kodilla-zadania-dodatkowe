@@ -4,17 +4,13 @@ class Application
 {
     public static void main (String[] args) throws Exception {
         ChessBoard thisBorad = new ChessBoard();
-        for(int i=0; i < 8; i++) {
-            thisBorad.theBoard.add(i, new BoardRow());
-            for(int j=0; j < 8; j++){
-                thisBorad.theBoard.get(i).theRow.add(j,null);
-            }
-        }
+        thisBorad.initBoard();
 
-        thisBorad.setFigure(0,0,new BoardFigure("Q","w"));
-        thisBorad.setFigure(7,7,new BoardFigure("P","b"));
+        thisBorad.setFigure(0,0,new PawnFigure(FigureColor.WHITE));
+        thisBorad.setFigure(7,7,new QueenFigure(FigureColor.BLACK));
         System.out.println(thisBorad.toString());
-        thisBorad.setFigure(3,3,new BoardFigure("Q","b"));
+        thisBorad.setFigure(3,3,new PawnFigure(FigureColor.BLACK));
         System.out.println(thisBorad.toString());
+
     }
 }
