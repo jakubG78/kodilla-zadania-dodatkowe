@@ -6,9 +6,33 @@ public class ChessBoard {
 
     private ArrayList<BoardRow> theBoard = new ArrayList<>();
 
-    public void initBoard(){
-        setFigure(); //dodać ustawienie figur na planszy początkowe
+    public void initBoard() {
+        for (int n = 0; n < 8; n++) {
+            if (n % 2 != 0)
+                setFigure(0, n, new PawnFigure(FigureColor.WHITE));
+        }
+        for (int n = 0; n < 8; n++) {
+            if (n % 2 == 0)
+                setFigure(1, n, new PawnFigure(FigureColor.WHITE));
+        }
+        for (int n = 0; n < 8; n++) {
+            if (n % 2 != 0)
+                setFigure(2, n, new PawnFigure(FigureColor.WHITE));
+        }
+        for (int n = 0; n < 8; n++) {
+            if (n % 2 == 0)
+                setFigure(5, n, new PawnFigure(FigureColor.BLACK));
+        }
+        for (int n = 0; n < 8; n++) {
+            if (n % 2 != 0)
+                setFigure(6, n, new PawnFigure(FigureColor.BLACK));
+        }
+        for (int n = 0; n < 8; n++) {
+            if (n % 2 == 0)
+                setFigure(7, n, new PawnFigure(FigureColor.BLACK));
+        }
     }
+
     public ChessBoard() {
         for (int n = 0; n < 8; n++) {
             theBoard.add(new BoardRow());
@@ -42,9 +66,9 @@ public class ChessBoard {
                     s += "Q";
                 else
                     s += " ";
-                s+="|";
+                s += "|";
             }
-            result = result + s +"\n";
+            result = result + s + "\n";
         }
         return result;
     }
